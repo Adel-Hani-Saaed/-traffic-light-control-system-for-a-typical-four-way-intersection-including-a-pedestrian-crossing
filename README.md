@@ -36,7 +36,7 @@ This project implements a traffic light control system for a typical four-way in
 
 
 ## Circuit Diagram
-[Attach a PNG/JPG image of the circuit or provide a link to Fritzing/Tinkercad design]
+![Traffic Light Image](Image/Hardware image.png)
 
 ---
 
@@ -49,7 +49,7 @@ This project implements a traffic light control system for a typical four-way in
    - Each state has defined transitions triggered by timers or button presses.
 
 2. **State Diagram**:  
-   [Attach or embed the FSM state diagram here]
+![State Diagram (Finite State Machine Design](Image/State Diagram (Finite State Machine Design).png)
 
 3. **Code Highlights**:
    - Organized into modular functions for readability.
