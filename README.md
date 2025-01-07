@@ -15,7 +15,7 @@ This project implements a traffic light control system for a typical four-way in
 ---
 
 ## Hardware Requirements
-1. Microcontroller: Arduino Uno (or any compatible board).
+1. Microcontroller: Atmega32.
 2. LEDs:
    - **Traffic Lights**: 6 LEDs (Red, Yellow, Green for each street).
    - **Pedestrian Signals**: 2 LEDs (Walk, Don’t Walk for each street).
