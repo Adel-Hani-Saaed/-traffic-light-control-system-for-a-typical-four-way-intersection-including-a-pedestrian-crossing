@@ -51,8 +51,9 @@ This project implements a traffic light control system for a typical four-way in
    - Each state has defined transitions triggered by timers or button presses.
 
 2. **State Diagram**:  
-![State Diagram (Finite State Machine Design](Image/State Diagram (Finite State Machine Design).png)
-
+<div align="center">
+  <img src="Image/State Diagram (Finite State Machine Design).png" alt=" Project Features " width="650">
+</div>
 3. **Code Highlights**:
    - Organized into modular functions for readability.
    - Includes proper comments for every line/block.
