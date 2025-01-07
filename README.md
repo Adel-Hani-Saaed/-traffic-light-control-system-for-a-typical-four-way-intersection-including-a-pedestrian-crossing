@@ -26,6 +26,15 @@ This project implements a traffic light control system for a typical four-way in
 
 ---
 
+## Testing Scenarios
+1. Normal traffic light cycle without pedestrian request:
+**Street 1 and Street 2 alternate in Red/Yellow/Green states.**
+2. Pedestrian crossing request:
+**Pedestrian button press triggers pedestrian crossing signal and stops traffic.**
+3. Transition back to normal mode after pedestrian crossing.
+
+
+
 ## Circuit Diagram
 [Attach a PNG/JPG image of the circuit or provide a link to Fritzing/Tinkercad design]
 
