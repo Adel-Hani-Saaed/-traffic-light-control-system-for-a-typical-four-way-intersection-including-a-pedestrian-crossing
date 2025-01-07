@@ -1,134 +1,69 @@
-# Traffic Light Control System 🚦
+# Traffic Light Control System with Pedestrian Crossing
 
-This project implements a **smart traffic light control system** using embedded systems principles. The system efficiently manages traffic flow for two streets, incorporating both normal operation and pedestrian crossing functionality. Designed with modularity in mind, it separates application logic, hardware abstraction, and microcontroller-level control.
+## Overview
+This project implements a traffic light control system for a typical four-way intersection, with a pedestrian crossing feature. The system is designed using an FSM (Finite State Machine) for structured state transitions. This project is part of the ReNile Embedded Systems evaluation process.
 
 ---
 
 ## Features
-
-### 1. **Normal Mode**
-   - Controls vehicle and pedestrian lights based on preset timings.
-   - Ensures smooth traffic flow without manual intervention.
-
-### 2. **Pedestrian Mode**
-   - Activated via a button press.
-   - Stops vehicle flow to allow safe pedestrian crossing.
-
-### 3. **Real-Time Responsiveness**
-   - External interrupts allow dynamic switching between modes without restarting the system.
-
-### 4. **Extensibility**
-   - Designed to accommodate additional streets or advanced features like sensors for adaptive traffic management.
+1. Traffic light control for two main streets (Red, Yellow, Green LEDs).
+2. Pedestrian crossing system with request buttons and Walk/Don't Walk signals.
+3. Emergency pedestrian override mode to prioritize safety.
+4. System implemented using FSM for state-based control.
+5. Timed light cycles with smooth transitions.
 
 ---
 
-## System Architecture
-
-The project follows a layered architecture for clear separation of concerns:
-
-### 1. **APP Layer**
-   - Handles overall system coordination.
-   - Contains the main program and high-level logic.
-
-### 2. **HAL (Hardware Abstraction Layer)**
-   - Manages hardware components such as LEDs and buttons.
-   - Provides an interface for controlling hardware without exposing low-level details.
-
-### 3. **MCAL (Microcontroller Abstraction Layer)**
-   - Controls microcontroller peripherals like timers and external interrupts.
-   - Ensures precise timing and event-driven responsiveness.
+## Hardware Requirements
+1. Microcontroller: Atmega32.
+2. LEDs:
+   - **Traffic Lights**: 6 LEDs (Red, Yellow, Green for each street).
+   - **Pedestrian Signals**: 2 LEDs (Walk, Don’t Walk for each street).
+3. Push Buttons:
+   - For pedestrian crossing requests.
+4. Resistors and breadboard for connections.
+5. Power supply (e.g., USB or battery pack).
 
 ---
 
-## Components Used
+## Testing Scenarios
+1. Normal traffic light cycle without pedestrian request:
+**Street 1 and Street 2 alternate in Red/Yellow/Green states.**
+2. Pedestrian crossing request:
+**Pedestrian button press triggers pedestrian crossing signal and stops traffic.**
+3. Transition back to normal mode after pedestrian crossing.
 
-### Hardware
-- **LEDs**: Represent traffic lights for vehicles and pedestrians.
-- **Push Button**: Allows pedestrians to request crossing.
-- **Microcontroller**: (e.g., ATmega32) Simulates traffic system behavior.
-- **Timers & Interrupts**: Ensure precise operation and responsiveness.
 
-### Software
-- **C Programming**: Core logic implementation.
-- **Modular Design**: Separation of logic for scalability and readability.
 
----
-
-## Workflow
-
-1. **Initialization Phase**:
-   - Configures LEDs as outputs.
-   - Sets up timers and external interrupts.
-   - Initializes the traffic system to `NORMAL_MODE`.
-
-2. **Normal Mode Operation**:
-   - Alternates vehicle traffic lights between green, yellow, and red.
-   - Keeps pedestrian lights red unless `PEDESTRIAN_MODE` is activated.
-
-3. **Pedestrian Mode Operation**:
-   - Activated via a button press (using an external interrupt).
-   - Stops vehicle traffic by switching all vehicle lights to red.
-   - Activates pedestrian green lights for safe crossing.
-
-4. **Return to Normal Mode**:
-   - Resets pedestrian lights to red.
-   - Resumes normal traffic light operation.
+## Circuit Diagram
+[Attach a PNG/JPG image of the circuit or provide a link to Fritzing/Tinkercad design]
 
 ---
 
-## Code Structure
+## Software Description
+1. **Architecture**:  
+   - The system uses a **Finite State Machine (FSM)** with states such as:
+     - Normal Traffic Mode
+     - Pedestrian Request Mode
+     - Emergency Mode (override).
+   - Each state has defined transitions triggered by timers or button presses.
 
-- **`APP.c`**: High-level logic and coordination.
-- **`APP_interface.h`**: Declaration of application-level functions.
-- **`LED.c` / `LED_interface.h`**: HAL layer for LED control.
-- **`Button.c` / `Button_interface.h`**: HAL layer for button handling.
-- **`Timer.c` / `Timer_interface.h`**: MCAL layer for timer operations.
-- **`EXTI.c` / `EXTI_interface.h`**: MCAL layer for external interrupts.
+2. **State Diagram**:  
+   [Attach or embed the FSM state diagram here]
 
----
-
-## Sample Code
-
-```c
-void main(void) {
-    APP_voidInit();            // Initialize system components.
-    APP_voidStartTrifficLight();  // Start traffic light management.
-}
-```
+3. **Code Highlights**:
+   - Organized into modular functions for readability.
+   - Includes proper comments for every line/block.
+   - Utilizes `delay` for timing and debouncing techniques for button handling.
 
 ---
 
-## Key Concepts Demonstrated
+## How to Set Up
+### Hardware Setup:
+1. Connect LEDs and buttons to the microcontroller as shown in the circuit diagram.
+2. Ensure resistors are connected to protect LEDs.
 
-1. **Real-Time Systems**:
-   - Precise timing using hardware timers.
-   - Event-driven behavior with external interrupts.
-
-2. **Embedded Systems Design**:
-   - Layered architecture for modularity and scalability.
-   - Low-level hardware control with abstraction.
-
-3. **Safety and Reliability**:
-   - Ensures pedestrian safety with dedicated crossing mode.
-   - Resilient to mode switching in real-time.
-
----
-
-## Future Enhancements
-
-- **Adaptive Traffic Management**: Use sensors to adjust timing based on traffic density.
-- **Remote Control**: Add IoT capabilities for remote monitoring and control.
-- **Energy Efficiency**: Integrate power-saving techniques for LED operation.
-
----
-
-## Author
-**Adel Hani**  
-Embedded Systems Developer
-
----
-
-## Contact
-- **Email**: adelhani832@gmail.com
-- **LinkedIn**: [Your LinkedIn Profile](#)
-
+### Software Setup:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Adel-Hani-Saaed/-traffic-light-control-system-for-a-typical-four-way-intersection-including-a-pedestrian-crossing.git
