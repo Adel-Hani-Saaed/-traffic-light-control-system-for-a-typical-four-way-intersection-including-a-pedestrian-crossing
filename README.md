@@ -36,7 +36,7 @@ This project implements a traffic light control system for a typical four-way in
 
 
 ## Circuit Diagram
-![Traffic Light Image]([https://github.com/Adel-Hani-Saaed/your-repo/raw/main/images/traffic_light.png](https://github.com/Adel-Hani-Saaed/-traffic-light-control-system-for-a-typical-four-way-intersection-including-a-pedestrian-crossing/edit/main/Image/Hardware%20image.png))
+![Traffic Light Image](Image/Hardware image.png)
 
 ---
 
