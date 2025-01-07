@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "f:/IMT/Embedded Systems AVR/Embedded AVR (Amgad samir)/AVR IMT/Eclipse Workspace - BreakDown/ReNile_Task_V1_TEST/Project",
+      "program": "f:/IMT/Embedded Systems AVR/Embedded AVR (Amgad samir)/AVR IMT/Eclipse Workspace - BreakDown/ReNile_Task_V1_TEST/Project/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
