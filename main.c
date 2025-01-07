@@ -9,7 +9,7 @@
 /*******************************************************/
 
 /* APP Layer Includes */
-#include "APP/APP_interface.h"  // تضمين واجهة التطبيق التي تحتوي على تعريفات الدوال
+#include "APP/APP_interface.h" 
 
 /**
  * @brief Main function: Entry point for the traffic light application.
